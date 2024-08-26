@@ -1,0 +1,284 @@
+/* Base Styles */
+html, body {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure that the header and container take full width */
+header {
+  width: 100%;
+  background-color: inherit;
+  padding: 0;
+}
+
+.cover-container {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 42em;
+  margin: auto;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  font-weight: bold; /* Optional: makes the active link stand out */
+}
+
+/* Light Theme */
+body.light-mode,
+.light-mode .d-flex {
+  background-color: #f8f9fa;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  color: #212529;
+}
+
+.light-mode .nav-link {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.light-mode .nav-link:hover {
+  color: #007bff; /* Adjust color for hover effect */
+  border-bottom-color: #007bff; /* Ensure border color on hover */
+}
+
+.light-mode .nav-link.active {
+  color: #0d1b2a;
+  border-bottom-color: #0d1b2a;
+}
+
+/* Dark Theme */
+body.dark-mode,
+.dark-mode .d-flex,
+.dark-mode .container {
+  background-color: #0d1b2a;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+  color: #fff;
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: #0d1b2a; /* Ensure both nav and footer have the dark color */
+}
+
+.dark-mode .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .nav-link:hover {
+  color: #007bff; /* Adjust color for hover effect */
+  border-bottom-color: #007bff; /* Ensure border color on hover */
+}
+
+.dark-mode .nav-link.active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Custom default button */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none;
+}
+
+/* Base structure */
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+/* Header */
+header,
+.nav-masthead .nav-link {
+  background-color: inherit;
+}
+
+.nav-masthead .nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Footer */
+footer {
+  padding: 1rem 0;
+  border: 0;
+  background-color: transparent; /* Ensure footer background is transparent */
+}
+
+footer .container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between;
+}
+
+.footer-text {
+  margin: 0; /* Remove default margin from p tag */
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1.5rem; /* Space between icons */
+}
+
+.footer-icon {
+  color: inherit; /* Inherit color from text */
+  font-size: 1.5rem; /* Adjust size as needed */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer-icon:hover {
+  color: #007bff; /* Adjust hover color as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-masthead {
+    justify-content: center;
+  }
+
+  .nav-masthead .nav-link {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .footer-icons {
+    gap: 0.5rem; /* Reduce gap on smaller screens */
+  }
+}
+
+/* Hero Section Styles */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Space between text and image */
+  padding: 2rem 1rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 80%; /* Adjust as needed */
+  max-height: 400px; /* Add this line to limit the height */
+  width: auto; /* Change from 'max-width' to 'width' */
+  height: auto;
+  border-radius: 8px;
+  animation: bounce 2s infinite;
+  background: transparent;
+  object-fit: cover; /* This ensures the image covers the area without stretching */
+}
+
+@media (min-width: 1200px) {
+  .hero-image img {
+    max-width: 60%; /* Reduce max-width for larger screens */
+    max-height: 350px; /* Adjust max-height for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-content, .hero-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-image img {
+    max-width: 60%;
+    max-height: 300px;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Modal styles for react-modal */
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  min-width: 300px;
+  position: relative;
+  /* Add a border to make sure it's visible */
+  border: 2px solid red;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.icon-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
