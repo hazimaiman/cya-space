@@ -20,7 +20,7 @@ function Hero() {
           delaySpeed={1000}
         /></h2>
         <p className="lead">
-          I am a passionate individual looking for opportunities in software development. I am flexible with working hours and environments and open to all possibilities. I also do freelance work occasionally and aspire to become a CTO someday.
+        I am a passionate individual looking for opportunities in software development with a flexible working hours and environment. I do freelance work occasionally and aspire to become a CTO someday.
         </p>
         <p className="lead">
           <Link to="footer" smooth={true} duration={500} className="btn btn-lg btn-secondary fw-bold">
